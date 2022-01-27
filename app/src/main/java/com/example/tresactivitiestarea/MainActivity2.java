@@ -7,24 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    //Abre las activities encima de si misma?
-    private Button act2Button;
+public class MainActivity2 extends AppCompatActivity {
+    private Button act1Button;
     private Button act3Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
-        act2Button = (Button) findViewById(R.id.act2Button);
-        act2Button.setOnClickListener(new View.OnClickListener() {
+        act1Button = (Button) findViewById(R.id.act1Button);
+        act1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity2();
+                openActivity1();
             }
         });
-        act3Button = (Button) findViewById(R.id.act3Button);
+        act3Button = (Button) findViewById(R.id.act2Button);
         act3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void openActivity2(){
-        Intent intent = new Intent(this, MainActivity2.class);
+    public void openActivity1(){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         this.finish();
     }
